@@ -1,0 +1,33 @@
+# Laravel
+/vendor/
+/node_modules/
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+database/*.sqlite
+database/*.sqlite-journal
+.env
+.env.backup
+.env.production
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log*
+yarn-error.log*
+*.log
+
+# local-only agent memory + tooling — NEVER commit
+agent.md
+.commandcode/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# build / test artifacts
+coverage/
+*.tsbuildinfo
