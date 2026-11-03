@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PosController;
 use App\Http\Controllers\StoreSelectionController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -17,6 +18,9 @@ Route::middleware(['auth', 'store.selected', 'store.context'])->group(function (
     Route::get('dashboard', function () {
         return Inertia::render('dashboard');
     })->name('dashboard');
+
+    Route::get('pos', [PosController::class, 'index'])->name('pos.index');
+    Route::post('pos/checkout', [PosController::class, 'checkout'])->name('pos.checkout');
 });
 
 require __DIR__.'/settings.php';
