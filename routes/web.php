@@ -28,6 +28,8 @@ Route::middleware(['auth', 'store.selected', 'store.context'])->group(function (
     Route::resource('purchases', \App\Http\Controllers\PurchaseController::class)->only(['index', 'create', 'store']);
     Route::get('inventory', [\App\Http\Controllers\StockController::class, 'index'])->name('inventory.index');
     Route::post('inventory/adjust', [\App\Http\Controllers\StockController::class, 'adjust'])->name('inventory.adjust');
+    Route::resource('expenses', \App\Http\Controllers\ExpenseController::class)->only(['index', 'store']);
+    Route::resource('employees', \App\Http\Controllers\EmployeeController::class)->only(['index', 'store']);
 });
 
 require __DIR__.'/settings.php';
