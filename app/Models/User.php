@@ -38,7 +38,7 @@ class User extends Authenticatable
 
     public function stores()
     {
-        return $this->belongsToMany(Store::class)->withPivot('is_default')->withTimestamps();
+        return $this->belongsToMany(Store::class, 'user_store')->withPivot('is_default')->withTimestamps();
     }
 
     public function defaultStore()
