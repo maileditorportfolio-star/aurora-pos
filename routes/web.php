@@ -26,6 +26,8 @@ Route::middleware(['auth', 'store.selected', 'store.context'])->group(function (
     Route::resource('suppliers', \App\Http\Controllers\SupplierController::class)->only(['index', 'store']);
     Route::resource('customers', \App\Http\Controllers\CustomerController::class)->only(['index', 'store']);
     Route::resource('purchases', \App\Http\Controllers\PurchaseController::class)->only(['index', 'create', 'store']);
+    Route::get('inventory', [\App\Http\Controllers\StockController::class, 'index'])->name('inventory.index');
+    Route::post('inventory/adjust', [\App\Http\Controllers\StockController::class, 'adjust'])->name('inventory.adjust');
 });
 
 require __DIR__.'/settings.php';
