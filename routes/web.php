@@ -21,6 +21,8 @@ Route::middleware(['auth', 'store.selected', 'store.context'])->group(function (
 
     Route::get('pos', [PosController::class, 'index'])->name('pos.index');
     Route::post('pos/checkout', [PosController::class, 'checkout'])->name('pos.checkout');
+
+    Route::resource('products', \App\Http\Controllers\ProductController::class)->only(['index', 'store']);
 });
 
 require __DIR__.'/settings.php';
