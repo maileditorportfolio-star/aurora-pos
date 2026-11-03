@@ -23,6 +23,8 @@ Route::middleware(['auth', 'store.selected', 'store.context'])->group(function (
     Route::post('pos/checkout', [PosController::class, 'checkout'])->name('pos.checkout');
 
     Route::resource('products', \App\Http\Controllers\ProductController::class)->only(['index', 'store']);
+    Route::resource('suppliers', \App\Http\Controllers\SupplierController::class)->only(['index', 'store']);
+    Route::resource('customers', \App\Http\Controllers\CustomerController::class)->only(['index', 'store']);
 });
 
 require __DIR__.'/settings.php';
